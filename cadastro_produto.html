@@ -45,9 +45,49 @@
                     <label class="input-label" for="descricao">Descrição</label>
                     <span class="input-mensagem-erro">Este campo não está válido</span>
                 </div>
+                <div class="input-container cadastro__descricao-container">
+                    <input class="input" name="quantidade" id="quantidade" type="number" placeholder="Quantidade em Estoque" required>
+                    <label class="input-label" for="quantidade">Quantidade em Estoque</label>
+                    <span class="input-mensagem-erro">Este campo não está válido</span>
+                </div>
                 <button class="botao">Cadastrar produto</button>
             </form>
         </section>
     </main>
-</body>
+
+    <script src="https://github.com/codermarcos/simple-mask-money/releases/download/v4.1.3/simple-mask-money.umd.js"></script>
+
+    <script>
+        let inputPreco = document.getElementById("preco")
+        let inputQuant = document.getElementById("quantidade")
+
+        const optionsBRL = {
+            afterFormat(e) { console.log('afterFormat', e); },
+            allowNegative: false,
+            beforeFormat(e) { console.log('beforeFormat', e); },
+            negativeSignAfter: false,
+            prefix: 'R$',
+            suffix: '',
+            fixed: true,
+            fractionDigits: 2,
+            decimalSeparator: ',',
+            thousandsSeparator: '.',
+            cursor: 'end'
+        };
+
+        SimpleMaskMoney.setMask(inputPreco, optionsBRL);
+
+        inputQuant.addEventListener('blur', (e) => {
+            if(inputQuant.validity.valid){
+                inputQuant.parentElement.classList.remove('input-container--invalido')
+                inputQuant.parentElement.querySelector('.input-mensagem-erro').innerHTML = ''
+            }
+            else{
+                inputQuant.parentElement.classList.add('input-container--invalido')
+                inputQuant.parentElement.querySelector('.input-mensagem-erro').innerHTML = 'Campo quantidade não deve estar vazio'
+            }
+        })
+
+        
+    </script>
 </html>

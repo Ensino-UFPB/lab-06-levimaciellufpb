@@ -54,13 +54,21 @@ const mensagensDeErro = {
     },
     estado: {
         valueMissing: 'O campo de estado não pode estar vazio.'
+    },
+    instagram:{
+        valueMissing: 'O campo instagram não pode estar vazio.',
+        patternMismatch: 'O Instagram digitado não é válido.',
+    },
+    telefone:{
+        valueMissing: 'O campo telefone não pode estar vazio.',
+        patternMismatch: 'O telefone digitado não é válido.',
     }
 }
 
 const validadores = {
     dataNascimento:input => validaDataNascimento(input),
     cpf:input => validaCPF(input),
-    cep:input => recuperarCEP(input)
+    cep:input => recuperarCEP(input),
 }
 
 function mostraMensagemDeErro(tipoDeInput, input) {

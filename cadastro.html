@@ -31,9 +31,6 @@
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
 
-
-
-
                     <div class="input-container">
                         <input name="email" id="email" class="input" type="email" placeholder="Email" data-tipo="email" required>
                         <label class="input-label" for="email">Email</label>
@@ -58,6 +55,19 @@
                         <label class="input-label" for="cpf">CPF</label>
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
+                    
+                    <div class="input-container">
+                        <input name="instagram" id="instagram" class="input" type="text" placeholder="Instagram" data-tipo="instagram" pattern="^@.*$" required>
+                        <label class="input-label" for="instagram">Instagram</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+
+                    <div class="input-container">
+                        <input name="telefone" id="telefone" class="input" type="text" placeholder="Telefone" data-tipo="telefone" pattern="^(\(?[1-9]{2}\)? ?(?:[2-8]|9[0-9])[0-9]{3}-?[0-9]{4})$" >
+                        <label class="input-label" for="telefone">Telefone</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+
                 </fieldset>
                 <fieldset>
                     <legend class="formulario__legenda">Endereço</legend>
